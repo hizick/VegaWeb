@@ -26,6 +26,7 @@ namespace Vega.Controllers
         {
             var allMakes = makes.GetAllMakes();
             var listing = mapper.Map<IEnumerable<Make>, IEnumerable<MakeDetailListing>>(allMakes);
+            //returns status code with object
             return Ok(listing);
         }
     }

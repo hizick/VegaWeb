@@ -8,4 +8,8 @@ import { Observable } from 'rxjs';
 export class FeatureService {
 
   constructor(private http: HttpClient) { }
+
+  getFeatures() {
+    return this.http.get('/api/Features')
+  }
 }
