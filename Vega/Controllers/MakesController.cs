@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Vega.ViewModel;
+using Vega.APIResource;
 using VegaData.Models;
 using VegaData.Repositories;
 
@@ -25,7 +25,7 @@ namespace Vega.Controllers
         public IActionResult GetAllMakes()
         {
             var allMakes = makes.GetAllMakes();
-            var listing = mapper.Map<IEnumerable<Make>, IEnumerable<MakeDetailListing>>(allMakes);
+            var listing = mapper.Map<IEnumerable<Make>, IEnumerable<MakeResource>>(allMakes);
             //returns status code with object
             return Ok(listing);
         }

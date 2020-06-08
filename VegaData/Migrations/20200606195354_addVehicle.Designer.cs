@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VegaData.Models.Context;
 
 namespace VegaData.Migrations
 {
     [DbContext(typeof(VegaDbContext))]
-    partial class VegaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200606195354_addVehicle")]
+    partial class addVehicle
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

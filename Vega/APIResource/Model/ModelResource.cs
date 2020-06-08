@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Vega.ViewModel
+namespace Vega.APIResource
 {
-    public class ModelDetailListing
+    public class ModelResource
     {
         public int Id { get; set; }
         public string Name { get; set; }

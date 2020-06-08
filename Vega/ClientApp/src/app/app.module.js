@@ -45,7 +45,7 @@ var AppModule = /** @class */ (function () {
                 ])
             ],
             providers: [
-                make_service_1.MakeService,
+                make_service_1.VehicleService,
                 feature_service_1.FeatureService
             ],
             bootstrap: [app_component_1.AppComponent]

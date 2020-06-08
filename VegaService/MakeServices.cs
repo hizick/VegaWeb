@@ -20,5 +20,10 @@ namespace VegaService
         {
             return _context.Makes.Include(m => m.Models);
         }
+
+        public Models FindModels(int id)
+        {
+            return _context.Models.Find(id);
+        }
     }
 }

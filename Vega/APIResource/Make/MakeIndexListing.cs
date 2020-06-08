@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Vega.ViewModel.Make
+namespace Vega.APIResource.Make
 {
     public class MakeIndexListing
     {
-        public IEnumerable<MakeDetailListing> Makes { get; set; }
+        public IEnumerable<MakeResource> Makes { get; set; }
     }
 }

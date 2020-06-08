@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Vega.ViewModel.Feature;
+using Vega.APIResource.Feature;
 using VegaData.Models;
 using VegaData.Repositories;
 
@@ -27,7 +27,7 @@ namespace Vega.Controllers
         {
             var allFeatures = _features.GetFeatures().ToList();
 
-            var listing = _mapper.Map<List<Feature>, List<FeatureDetailListing>>(allFeatures);
+            var listing = _mapper.Map<List<Feature>, List<FeatureResource>>(allFeatures);
             return Ok(listing);
         }
     }

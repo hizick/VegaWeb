@@ -9,5 +9,6 @@ namespace VegaData.Repositories
     public interface IMakes
     {
         IEnumerable<Make> GetAllMakes();
+        Models.Models FindModels(int id);
     }
 }
