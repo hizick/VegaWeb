@@ -25,5 +25,11 @@ namespace VegaService
         {
             return _context.Models.Find(id);
         }
+
+        public Make GetMakeById(int id)
+        {
+            return _context.Makes.FirstOrDefault(m => m.Id == id);
+        }
+        
     }
 }

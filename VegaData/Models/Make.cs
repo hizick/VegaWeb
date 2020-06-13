@@ -11,7 +11,6 @@ namespace VegaData.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        [JsonIgnore]
-        public virtual IEnumerable<Models> Models { get; set; }
+        public virtual ICollection<Models> Models { get; set; }
     }
 }

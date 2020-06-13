@@ -7,6 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class VehicleService {
+  createVehicle(vehicle) {
+    return this.http.post('api/vehicles', vehicle)
+  }
 
   constructor(private http: HttpClient) { }
   
@@ -17,5 +20,9 @@ export class VehicleService {
   
   getFeatures(): Observable<any> {
     return this.http.get('/api/Features')
+  }
+  getVehicle(id): Observable<any>{
+    debugger
+    return this.http.get('/api/Vehicles/' + id)
   }
 }

@@ -9,23 +9,39 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.VehicleFormComponent = void 0;
 var core_1 = require("@angular/core");
 var VehicleFormComponent = /** @class */ (function () {
-    function VehicleFormComponent(vehicleService, featureService) {
+    function VehicleFormComponent(vehicleService) {
         this.vehicleService = vehicleService;
-        this.featureService = featureService;
-        this.vehicle = {};
+        this.vehicle = {
+            features: [],
+            contact: {}
+        };
     }
     VehicleFormComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.vehicleService.getMakes().subscribe(function (data) { return _this.makes = data; });
-        this.featureService.getFeatures().subscribe(function (data) { return _this.features = data; });
+        this.vehicleService.getFeatures().subscribe(function (data) { return _this.features = data; });
         //debugger
     };
     VehicleFormComponent.prototype.onMakeChange = function () {
         var _this = this;
         //console.log("vehicle", this.vehicle)
-        var selectedMake = this.makes.find(function (m) { return m.id == _this.vehicle.make; });
+        var selectedMake = this.makes.find(function (m) { return m.id == _this.vehicle.makeId; });
         //console.log(selectedMake)
         this.models = selectedMake ? selectedMake.models : [];
+        delete this.vehicle.modelId;
+    };
+    VehicleFormComponent.prototype.onFeatureToggle = function (featureId, $event) {
+        if ($event.target.checked) {
+            this.vehicle.features.push(featureId);
+        }
+        else {
+            var index = this.vehicle.features.indexOf(featureId);
+            this.vehicle.features.splice(index, 1);
+        }
+    };
+    VehicleFormComponent.prototype.createVehicle = function () {
+        this.vehicleService.createVehicle(this.vehicle)
+            .subscribe(function (data) { return console.log(JSON.stringify(data)); });
     };
     VehicleFormComponent = __decorate([
         core_1.Component({

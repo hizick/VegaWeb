@@ -14,7 +14,6 @@ namespace VegaData.Models
         public int Id { get; set; }
         [Required] [StringLength(49)] public string Name { get; set; }
         public int MakeId { get; set; }
-        //[JsonIgnore]
         public Make Make { get; set; }
     }
 }

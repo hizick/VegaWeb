@@ -7,10 +7,10 @@ using VegaData.Models;
 
 namespace Vega.APIResource
 {
-    public class MakeResource
+    public class MakeResource : ConstantPair
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public virtual IEnumerable<ModelResource> Models { get; set; }
+        //public int Id { get; set; }
+        //public string Name { get; set; }
+        public virtual ICollection<ConstantPair> Models { get; set; }
     }
 }

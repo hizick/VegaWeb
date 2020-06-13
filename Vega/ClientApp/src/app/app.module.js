@@ -18,8 +18,7 @@ var home_component_1 = require("./home/home.component");
 var counter_component_1 = require("./counter/counter.component");
 var fetch_data_component_1 = require("./fetch-data/fetch-data.component");
 var vehicle_form_component_1 = require("./vehicle-form/vehicle-form.component");
-var make_service_1 = require("./services/make.service");
-var feature_service_1 = require("./services/feature.service");
+var vehicle_service_1 = require("./services/vehicle.service");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -45,8 +44,7 @@ var AppModule = /** @class */ (function () {
                 ])
             ],
             providers: [
-                make_service_1.VehicleService,
-                feature_service_1.FeatureService
+                vehicle_service_1.VehicleService
             ],
             bootstrap: [app_component_1.AppComponent]
         })

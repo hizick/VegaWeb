@@ -18,8 +18,8 @@ namespace VegaService
         }
         public void AddVehicle(Vehicle vehicle)
         {
-            context.Vehicles.Add(vehicle);
-            context.SaveChanges();
+                context.Vehicles.Add(vehicle);
+                context.SaveChanges();
         }
 
         //public Vehicle GetVehicle(int id) => context.Vehicles.FirstOrDefault(v => v.Id == id);
@@ -28,14 +28,21 @@ namespace VegaService
         {
             if (!includeRelated)
                 return context.Vehicles.FirstOrDefault(v => v.Id == id);
-            return context.Vehicles
-              .Include(v => v.Features)
-              .ThenInclude(vf => vf.Feature)
+            var vv = context.Vehicles
+              .Include(vf => vf.Features)
+              .ThenInclude(v => v.Feature)
               .Include(v => v.Model)
               .ThenInclude(m => m.Make)
               .FirstOrDefault(v => v.Id == id);
+            return vv;
         }
 
         public void Remove(Vehicle vehicle) => context.Remove(vehicle);
+
+        public VehicleFeature GetVehicleFeatureByFeatureId(int id)
+        {
+            var vehicleFeature = context.VehicleFeatures.FirstOrDefault(x => x.FeatureId == id);
+            return vehicleFeature;
+        }
     }
 }

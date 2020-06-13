@@ -10,5 +10,7 @@ namespace VegaData.Repositories
         void AddVehicle(Vehicle vehicle);
         Vehicle GetVehicleById(int id, bool includeRelated = true);
         void Remove(Vehicle vehicle);
+
+        VehicleFeature GetVehicleFeatureByFeatureId(int id);
     }
 }

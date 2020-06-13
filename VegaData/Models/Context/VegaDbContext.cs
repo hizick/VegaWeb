@@ -11,6 +11,7 @@ namespace VegaData.Models.Context
         public DbSet <Models> Models { get; set; }
         public DbSet <Feature> Features { get; set; }
         public DbSet <Vehicle> Vehicles { get; set; }
+        public DbSet <VehicleFeature> VehicleFeatures { get; set; }
 
         public VegaDbContext(DbContextOptions<VegaDbContext> options) : base(options) { }
 

@@ -9,8 +9,8 @@ namespace VegaData.Models
     [Table("VehicleFeatures")]
     public class VehicleFeature
     {
-        [JsonIgnore] public int VehicleId { get; set; }
-        [JsonIgnore] public int FeatureId { get; set; }
+        public int VehicleId { get; set; }
+        public int FeatureId { get; set; }
         public Vehicle Vehicle { get; set; }
         public Feature Feature { get; set; }
     }
