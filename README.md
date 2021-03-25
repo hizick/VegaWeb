@@ -1,6 +1,9 @@
 # VegaWeb
 This is a vehicle registration app written with Angular and dotnet core REST API.
 
+# Overview
+It is a test project for staff to perform CRUD operations. 
+
 ## Running the Project
 
 - clone this repo
